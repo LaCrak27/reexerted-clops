@@ -11,7 +11,7 @@ const { Routes } = require("discord-api-types/v9");
 const cron = require("node-cron");
 const fs = require("fs");
 
-//Express.js server to get around limitations of hosting websites lmao
+/*//Express.js server to get around limitations of hosting websites lmao
 const http = require("http");
 const express = require("express");
 const { Console } = require("console");
@@ -22,7 +22,7 @@ app.get("/", (request, response) => {
   Console.log("Got HTTP request");
   response.sendStatus(200);
 });
-
+/*
 
 // Discord client setup
 const serverIntents = new IntentsBitField(3276799);
@@ -125,7 +125,7 @@ bot.once("ready", async () => {
       .setTitle(`Reexerted Cyclops Online`),
     2
   );
-  app.listen(port, () => console.log(`Listening on port ${port} for keeping the server alive and giving off status messages.`));
+  //app.listen(port, () => console.log(`Listening on port ${port} for keeping the server alive and giving off status messages.`));
   console.log(`✅ R.Clops is now online! logged in as ${bot.user.tag}`);
 });
 
