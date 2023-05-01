@@ -1,0 +1,7 @@
+node_modules
+.env
+.vscode
+APIKey.json
+originalkey.json
+.VSCodeCounter
+memories.txt

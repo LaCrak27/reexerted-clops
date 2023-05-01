@@ -1,0 +1,13 @@
+{
+    "prefix": "-",
+    "icon": "https://cdn.discordapp.com/emojis/1102540396552261642.webp?size=96&quality=lossless",
+    "securityGroups": {
+        "0": {
+            "desc": "",
+            "roles": []
+        }
+    },
+    "dateFormatPattern": "DD.MM.YY, HH:mm",
+    "maxMessageLength": 2000,
+    "zenURL": "https://zenquotes.io/api/random"
+}

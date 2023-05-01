@@ -1,0 +1,28 @@
+{
+  "name": "reexerted-clops",
+  "version": "2",
+  "engines": {
+    "node": "19.3.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "@google-cloud/vision": "^2.3.6",
+    "discord-api-types": "^0.22.0",
+    "discord.js": "^14.3.0",
+    "dotenv": "^10.0.0",
+    "moment": "^2.29.2",
+    "node-cron": "^3.0.0",
+    "node-fetch": "^2.6.7",
+    "openai": "^3.1.0",
+    "pg": "^8.7.1",
+    "quickchart-js": "^1.4.1",
+    "string-similarity": "^4.0.4"
+  }
+}
