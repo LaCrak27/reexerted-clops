@@ -14,10 +14,12 @@ const fs = require("fs");
 //Express.js server to get around limitations of hosting websites lmao
 const http = require("http");
 const express = require("express");
+const { Console } = require("console");
 const app = express();
-const port = process.env.PORT || 3001;
+const port = 3001;
 
 app.get("/", (request, response) => {
+  Console.log("Got HTTP request");
   response.sendStatus(200);
 });
 
