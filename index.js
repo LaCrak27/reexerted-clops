@@ -192,13 +192,6 @@ bot.on('guildMemberRemove', member => {
 })
 bot.login(process.env.TOKEN)
 
-//Give role when client joins server
-client.on('GuildMemberAdd', member => {
-    console.log('User: ' + member.user.username + ' has joined the server!');
-    var role = member.guild.roles.cache.find(role => role.name === "Member");
-    member.roles.add(role);
-});
-
 // General error handling
 process.on('uncaughtException', function (err) {
 	console.log(`⛔ Fatal error occured:`)
