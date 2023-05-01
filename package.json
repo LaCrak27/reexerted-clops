@@ -2,7 +2,7 @@
   "name": "reexerted-clops",
   "version": "2",
   "engines": {
-    "node": "19.3.0"
+    "node": "18.0.0"
   },
   "main": "index.js",
   "scripts": {
