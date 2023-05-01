@@ -11,7 +11,7 @@ const { Routes } = require("discord-api-types/v9");
 const cron = require("node-cron");
 const fs = require("fs");
 
-/*//Express.js server to get around limitations of hosting websites lmao
+//Express.js server to get around limitations of hosting websites lmao
 const http = require("http");
 const express = require("express");
 const { Console } = require("console");
@@ -22,7 +22,6 @@ app.get("/", (request, response) => {
   console.log("Got HTTP request");
   response.sendStatus(200);
 });
-*/
 
 // Discord client setup
 const serverIntents = new IntentsBitField(3276799);
