@@ -93,7 +93,7 @@ async function deployCommands() {
  */
 bot.once("ready", async() => {
 	await deployCommands();
-	botLog(new EmbedBuilder().setDescription(`💡 R.Clops is now online! logged in as ${bot.user.tag}`).setTitle(`Warden Online`),2);
+	botLog(new EmbedBuilder().setDescription(`💡 R.Clops is now online! logged in as ${bot.user.tag}`).setTitle(`Reexerted Cyclops Online`),2);
 	console.log(`✅ R.Clops is now online! logged in as ${bot.user.tag}`)
 })
 
@@ -138,24 +138,6 @@ bot.on('interactionCreate', async interaction => {
 			fccinteraction(interaction);
 			return;
 		}
-		if (interaction.customId === "platformpc") {
-			interaction.deferUpdate();
-			interaction.member.roles.add("428260067901571073")
-			interaction.member.roles.add("380247760668065802")
-			botLog(new EmbedBuilder().setDescription(`Welcome Verification passed - User: **${interaction.user.tag}**`),0)
-		} else if (interaction.customId === "platformxb") {
-			interaction.deferUpdate();
-			interaction.member.roles.add("533774176478035991")
-			interaction.member.roles.add("380247760668065802")
-			botLog(new EmbedBuilder().setDescription(`Welcome Verification passed - User: **${interaction.user.tag}**`),0)
-		} else if (interaction.customId === "platformps") {
-			interaction.deferUpdate();
-			interaction.member.roles.add("428259777206812682")
-			interaction.member.roles.add("380247760668065802")
-			botLog(new EmbedBuilder().setDescription(`Welcome Verification passed - User: **${interaction.user.tag}**`),0)
-		}
-		interaction.member.roles.add("642840406580658218");
-		interaction.member.roles.add("642839749777948683");
 	}
 });
 
