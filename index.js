@@ -22,7 +22,7 @@ app.get("/", (request, response) => {
   console.log("Got HTTP request");
   response.sendStatus(200);
 });
-/*
+*/
 
 // Discord client setup
 const serverIntents = new IntentsBitField(3276799);
