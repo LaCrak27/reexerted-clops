@@ -19,7 +19,7 @@ const app = express();
 const port = 3001;
 
 app.get("/", (request, response) => {
-  Console.log("Got HTTP request");
+  console.log("Got HTTP request");
   response.sendStatus(200);
 });
 /*
