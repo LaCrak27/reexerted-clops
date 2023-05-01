@@ -18,7 +18,7 @@ const { Console } = require("console");
 const app = express();
 const port = 3001;
 
-app.get("/", (request, response) => {
+app.get("/test", (request, response) => {
   console.log("Got HTTP request");
   response.sendStatus(200);
 });
