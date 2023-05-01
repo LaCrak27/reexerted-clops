@@ -16,7 +16,7 @@ const http = require("http");
 const express = require("express");
 const { Console } = require("console");
 const app = express();
-const port = 3001;
+const port = 10000;
 
 app.get("/test", (request, response) => {
   console.log("Got HTTP request");
@@ -124,7 +124,7 @@ bot.once("ready", async () => {
       .setTitle(`Reexerted Cyclops Online`),
     2
   );
-  //app.listen(port, () => console.log(`Listening on port ${port} for keeping the server alive and giving off status messages.`));
+  app.listen(port, () => console.log(`Listening on port ${port} for keeping the server alive and giving off status messages.`));
   console.log(`✅ R.Clops is now online! logged in as ${bot.user.tag}`);
 });
 
