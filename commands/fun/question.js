@@ -15,8 +15,7 @@ module.exports = {
         cohere.init(process.env.APIKEY)
         const generateResponse = await cohere.generate({
             model: "base-light",
-            prompt: `Last Question: ${interaction.options.data.find(arg => arg.name === 'question').value}
-Answer:`,
+            prompt: `${interaction.options.data.find(arg => arg.name === 'question').value}?`,
             temperature: 0.5,
             max_tokens: 100,
             presence_penalty: 1.0,
