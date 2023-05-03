@@ -26,6 +26,8 @@ app.get("/test", (request, response) => {
 // Discord client setup
 const serverIntents = new IntentsBitField(3276799);
 const bot = new Client({ intents: serverIntents });
+
+
 /**
  * Loads command objects from the commands folder
  * @author  (Airom) Airom42
@@ -124,7 +126,6 @@ bot.once("ready", async () => {
       .setTitle(`Reexerted Cyclops Online`),
     2
   );
-  app.listen(port, () => console.log(`Listening on port ${port} for keeping the server alive and giving off status messages.`));
   console.log(`✅ R.Clops is now online! logged in as ${bot.user.tag}`);
 });
 
