@@ -10,22 +10,37 @@ module.exports = {
     permissions: 0,
 
     async execute(interaction) {
+        var arr1 = new Array();
+        arr1.push("Human:")
         // AI bot setup
         const cohere = require('cohere-ai');
         cohere.init(process.env.APIKEY)
         const generateResponse = await cohere.generate({
             model: "base-light",
-            prompt: `${interaction.options.data.find(arg => arg.name === 'question').value}?`,
+            prompt: `This is a discussion between a human and Reexerted Cyclops. 
+            Reexerted Cyclops is very nice and empathetic, but he only responds one time, and no further questions are asked after that.
+            
+            Human: ${interaction.options.data.find(arg => arg.name === 'question').value}
+            Reexerted Cyclops:`,
             temperature: 0.5,
-            max_tokens: 100,
-            presence_penalty: 1.0,
+            max_tokens: 150,
+            presence_penalty: 0.5,
             frequency_penalty: 1.0,
+            stop_sequences: arr1,
           });
         const generations = generateResponse.body.generations[0].text;
+        if(generations.endsWith("Human:"))
+        {
+            var text = generations.slice(0, -6);
+        }
+        else
+        {
+            var text = generations;
+        }
         //console.log(generations);
         try
         {
-            await interaction.reply({content: generations })
+            await interaction.reply({content: text })
         }
 
         catch (err) {
