@@ -17,7 +17,7 @@ module.exports = {
             model: "base-light",
             prompt: `Last Question: ${interaction.options.data.find(arg => arg.name === 'question').value}
 Answer:`,
-            temperature: 1,
+            temperature: 0.5,
             max_tokens: 100,
             presence_penalty: 1.0,
             frequency_penalty: 1.0,
