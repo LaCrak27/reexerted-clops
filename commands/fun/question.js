@@ -2,16 +2,16 @@ const Discord = require("discord.js");
 
 module.exports = {
     data: new Discord.SlashCommandBuilder()
-    .setName(`question`)
-    .setDescription(`Ask something to the all-knowing Reexerted-Cyclops!`)
-    .addStringOption(option => option.setName('question')
-        .setDescription('The thing you wanna ask')
-        .setRequired(true))
-    .addIntegerOption(option => option.setName('temperature')
-        .setDescription('How crazy the bot goes (0-500, around 50 is recommended)')
-        .setMinValue(0)
-        .setMaxValue(500)
-        .setRequired(true)),
+        .setName(`question`)
+        .setDescription(`Ask something to the all-knowing Reexerted-Cyclops!`)
+        .addStringOption(option => option.setName('question')
+            .setDescription('The thing you wanna ask')
+            .setRequired(true))
+        .addIntegerOption(option => option.setName('temperature')
+            .setDescription('How crazy the bot goes (0-500, around 50 is recommended)')
+            .setMinValue(0)
+            .setMaxValue(500)
+            .setRequired(true)),
     permissions: 0,
 
     async execute(interaction) {
@@ -34,24 +34,20 @@ module.exports = {
             presence_penalty: 0.5,
             frequency_penalty: 1.0,
             stop_sequences: arr1,
-          });
+        });
         const generations = generateResponse.body.generations[0].text;
-        if(generations.endsWith("Human:"))
-        {
+        if (generations.endsWith("Human:")) {
             var text = generations.slice(0, -6);
         }
-        if(generations.endsWith("Reexerted Cyclops:"))
-        {
-            var text = generations.slice(0, -18);
-        }
-        else
-        {
+        else {
+            if (generations.endsWith("Reexerted Cyclops:")) {
+                var text = generations.slice(0, -18);
+            }
             var text = generations;
         }
         //console.log(generations);
-        try
-        {
-            await interaction.reply({content: text })
+        try {
+            await interaction.reply({ content: text })
         }
 
         catch (err) {
