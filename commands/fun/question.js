@@ -17,7 +17,8 @@ module.exports = {
     async execute(interaction) {
         const temp = interaction.options.data.find(arg => arg.name === 'temperature').value / 100;
         var arr1 = new Array();
-        arr1.push("Human:")
+        arr1.push("Human:");
+        arr1.push("Reexerted Cyclops:");
         // AI bot setup
         const cohere = require('cohere-ai');
         cohere.init(process.env.APIKEY)
@@ -38,6 +39,10 @@ module.exports = {
         if(generations.endsWith("Human:"))
         {
             var text = generations.slice(0, -6);
+        }
+        if(generations.endsWith("Reexerted Cyclops:"))
+        {
+            var text = generations.slice(0, -18);
         }
         else
         {
