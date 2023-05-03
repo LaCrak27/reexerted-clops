@@ -6,10 +6,16 @@ module.exports = {
     .setDescription(`Ask something to the all-knowing Reexerted-Cyclops!`)
     .addStringOption(option => option.setName('question')
         .setDescription('The thing you wanna ask')
+        .setRequired(true))
+    .addIntegerOption(option => option.setName('temperature')
+        .setDescription('How crazy the bot goes (0-500, around 50 is recommended)')
+        .setMinValue(0)
+        .setMaxValue(500)
         .setRequired(true)),
     permissions: 0,
 
     async execute(interaction) {
+        const temp = interaction.options.data.find(arg => arg.name === 'temperature').value / 100;
         var arr1 = new Array();
         arr1.push("Human:")
         // AI bot setup
@@ -22,7 +28,7 @@ module.exports = {
             
             Human: ${interaction.options.data.find(arg => arg.name === 'question').value}
             Reexerted Cyclops:`,
-            temperature: 0.5,
+            temperature: temp,
             max_tokens: 150,
             presence_penalty: 0.5,
             frequency_penalty: 1.0,
