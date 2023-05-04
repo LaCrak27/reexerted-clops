@@ -2,9 +2,9 @@ const Discord = require("discord.js");
 
 module.exports = {
     data: new Discord.SlashCommandBuilder()
-        .setName(`question`)
+        .setName(`prompt`)
         .setDescription(`Ask something to the all-knowing Reexerted-Cyclops!`)
-        .addStringOption(option => option.setName('question')
+        .addStringOption(option => option.setName('prompt')
             .setDescription('The thing you wanna ask')
             .setRequired(true))
         .addIntegerOption(option => option.setName('temperature')
@@ -24,9 +24,9 @@ module.exports = {
         const generateResponse = await cohere.generate({
             model: "base-light",
             prompt: `This is a discussion between a human and Reexerted Cyclops. 
-            Reexerted Cyclops is very nice and empathetic, and he responds precisely without going off-topic.
+            Reexerted Cyclops is very nice and empathetic, and he responds precisely without going off-topic nor saying anything sexual or similar.
             
-            Human: ${interaction.options.data.find(arg => arg.name === 'question').value}
+            Human: ${interaction.options.data.find(arg => arg.name === 'prompt').value}
             Reexerted Cyclops:`,
             temperature: temp,
             max_tokens: 150,
