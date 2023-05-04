@@ -4,7 +4,7 @@ module.exports = {
     data: new Discord.SlashCommandBuilder()
         .setName(`prompt`)
         .setDescription(`Ask something to the all-knowing Reexerted-Cyclops!`)
-        .addStringOption(option => option.setName('prompt')
+        .addStringOption(option => option.setName('question')
             .setDescription('The thing you wanna ask')
             .setRequired(true))
         .addIntegerOption(option => option.setName('temperature')
@@ -26,7 +26,7 @@ module.exports = {
             prompt: `This is a discussion between a human and Reexerted Cyclops. 
             Reexerted Cyclops is very nice and empathetic, and he responds precisely without going off-topic nor saying anything sexual or similar.
             
-            Human: ${interaction.options.data.find(arg => arg.name === 'prompt').value}
+            Human: ${interaction.options.data.find(arg => arg.name === 'question').value}
             Reexerted Cyclops:`,
             temperature: temp,
             max_tokens: 150,
