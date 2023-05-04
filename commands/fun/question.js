@@ -38,7 +38,8 @@ module.exports = {
         var text = generations;
         //console.log(generations);
         try {
-            await interaction.reply({ content: text })
+            await interaction.reply({ content: `**${interaction.member} asked: "${interaction.options.data.find(arg => arg.name === 'question').value}"**
+${text}` })
         }
 
         catch (err) {
