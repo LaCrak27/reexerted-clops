@@ -24,7 +24,7 @@ module.exports = {
         const generateResponse = await cohere.generate({
             model: "base-light",
             prompt: `This is a discussion between a human and Reexerted Cyclops. 
-            Reexerted Cyclops is very nice and empathetic, and he responds precisely without going off-topic nor saying anything sexual or similar.
+            Reexerted Cyclops is very nice and empathetic, and he responds precisely without going off-topic nor saying anything sexual or similar. He also only responds in english, and is not capable of speaking any other languages.
             
             Human: ${interaction.options.data.find(arg => arg.name === 'question').value}
             Reexerted Cyclops:`,
