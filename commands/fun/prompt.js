@@ -4,6 +4,13 @@ module.exports = {
     data: new Discord.SlashCommandBuilder()
         .setName(`prompt`)
         .setDescription(`Ask something to the all-knowing Reexerted-Cyclops!`)
+        .addStringOption(option=>option.setName('model')
+            .setDescription('What AI model to use, better models will make more sense but take longer to generate.')
+            .setRequired(true)
+            .addChoices(
+                { name:'Advanced', value:'base' },
+                { name:'Basic', value:'base-light' },
+            ))
         .addStringOption(option => option.setName('question')
             .setDescription('The thing you wanna ask')
             .setRequired(true))
@@ -23,7 +30,7 @@ module.exports = {
         const cohere = require('cohere-ai');
         cohere.init(process.env.APIKEY)
         const generateResponse = await cohere.generate({
-            model: 'base',
+            model: interaction.options.data.find(arg => arg.name === 'model').value,
             prompt: `This is a discussion between a human and Reexerted Cyclops. 
             Reexerted Cyclops is very nice and empathetic, and he responds precisely without going off-topic nor saying anything sexual or offensive.
             Reexerted Cyclops lives in the elite dangerous universe (where humans pilot spaceships, like the Fer-De-Lance, the Alliance Chieftain, the Sidewinder, and the Anaconda), and there he is a thargoid, an alien species. Other examples of thargoids are Basilisks, Medusas and Hydras.
