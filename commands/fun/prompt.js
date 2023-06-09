@@ -22,7 +22,7 @@ module.exports = {
     permissions: 0,
 
     async execute(interaction) {
-        await interaction.reply('Our AI bot is crunching data to make your response...');
+        await interaction.deferReply();
         const temp = interaction.options.data.find(arg => arg.name === 'temperature').value / 100;
         var arr1 = new Array();
         arr1.push("     ");
