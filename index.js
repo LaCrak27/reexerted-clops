@@ -101,9 +101,9 @@ async function deployCommands() {
 
   try {
     await rest.put(
-      Routes.applicationGuildCommands(
-        process.env.CLIENTID,
-        process.env.GUILDID
+      Routes.applicationCommands(
+        process.env.CLIENTID
+        //process.env.GUILDID
       ),
       { body: commands }
     );
